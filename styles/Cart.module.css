@@ -1,0 +1,147 @@
+.container {
+  padding: 40px;
+  display: flex;
+}
+.left {
+  flex: 2;
+}
+
+.leftTable {
+  width: 100%;
+  border-spacing: 20px;
+}
+.leftTable tr td {
+  text-align: center;
+}
+
+.productName {
+  color: #d1411e;
+  font-weight: 500;
+}
+.productTotal {
+  font-weight: 500;
+  font-size: 18px;
+}
+.right {
+  flex: 1;
+  max-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 100px;
+  color: rgba(255, 255, 255, 0.466);
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 85%;
+  height: 100%;
+  padding: 50px;
+  padding-top: 20px;
+  background-color: rgb(49, 48, 48);
+}
+.cardTitle {
+  color: white;
+}
+.cardDetail {
+  font-weight: bold;
+}
+.cardDetail span {
+  margin-left: 10px;
+  color: white;
+  font-weight: normal;
+}
+.productRemove {
+  outline: none;
+  border: none;
+  background-color: rgba(167, 6, 6, 0.767);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: small;
+}
+
+.cartBtn {
+  padding: 5px 10px;
+  cursor: pointer;
+  color: #d1411e;
+  background-color: white;
+  border: none;
+  outline: none;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.cartBtn:disabled {
+  cursor: not-allowed;
+  color: #d1421e9f;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    flex-direction: column;
+    padding-top: 20px;
+  }
+  .trTitles {
+    display: none;
+  }
+  .tr {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+  .productPrice::before {
+    content: "Price: ";
+    font-weight: 500;
+  }
+  .productQuantiy::before {
+    content: "Quantity: ";
+    font-weight: 500;
+  }
+  .productTotal::before {
+    content: "Total: ";
+    font-weight: 500;
+  }
+  .right {
+    padding-right: 0;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding-top: 20px;
+    padding-left: 0;
+    font-size: small;
+  }
+
+  .right {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .wrapper {
+    font-size: medium;
+    min-width: 300px;
+    width: 50%;
+    margin-left: 30px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    padding-top: 20px;
+    padding-left: 0;
+    font-size: medium;
+  }
+
+  .right {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .wrapper {
+    font-size: medium;
+    min-width: 300px;
+    width: 50%;
+    margin-left: 30px;
+  }
+}

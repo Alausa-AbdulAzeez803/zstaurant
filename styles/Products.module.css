@@ -1,0 +1,15 @@
+.container {
+  margin: 40px 0;
+}
+.title {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.description {
+  width: 70%;
+  margin: auto;
+  color: rgb(99, 98, 98);
+  text-align: center;
+}

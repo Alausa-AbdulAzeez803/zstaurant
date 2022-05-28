@@ -1,0 +1,103 @@
+.container {
+  background-color: #d1411e;
+  padding: 0px 50px;
+  height: 100px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 3;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.callBtn {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+}
+.texts {
+  margin-left: 20px;
+  color: white;
+}
+
+.text:first-child {
+  font-size: 12px;
+  font-weight: 500;
+}
+.text:last-child {
+  font-size: 20px;
+  font-weight: bold;
+}
+.center {
+  flex: 3;
+}
+.list {
+  display: flex;
+  list-style-type: none;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.cart {
+  position: relative;
+}
+.cartModal {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: white;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  color: #d1411e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: smaller;
+  padding: 3px;
+}
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0px 30px;
+  }
+  .center {
+    display: none;
+  }
+  .center ul li {
+    display: none;
+  }
+  .center ul li:first-child {
+    display: flex;
+  }
+
+  .list .left {
+    flex: 3;
+  }
+  .right {
+    flex: 1;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    font-size: small;
+    padding: 0px 20px;
+  }
+}
