@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start -p $PORT",
+    "lint": "next lint",
+    "heroku-postbuild":"npm run build"
   },
   "dependencies": {
     "@paypal/react-paypal-js": "^7.8.0",
@@ -22,5 +23,6 @@
   "devDependencies": {
     "eslint": "8.16.0",
     "eslint-config-next": "12.1.6"
-  }
+  },
+  "proxy":"http://localhost:3000/"
 }

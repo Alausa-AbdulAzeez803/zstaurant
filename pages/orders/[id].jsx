@@ -50,7 +50,7 @@ const Orders = ({ order }) => {
           </div>
           <div className={statusClass(1)}>
             <div className={styles.detailDesc}>
-              <Image src="/img/bake.png" width={30} height={30} />
+              <Image src="/img/bake.png" alt="" width={30} height={30} />
               <p className={styles.text}>Preparing</p>
             </div>
             <Image
@@ -111,7 +111,7 @@ const Orders = ({ order }) => {
 };
 
 export const getServerSideProps = async ({ params }) => {
-  const res = await axios.get(`http://localhost:3000/api/orders/${params.id}`);
+  const res = await axios.get(`/api/orders/${params.id}`);
   return {
     props: { order: res.data },
   };
