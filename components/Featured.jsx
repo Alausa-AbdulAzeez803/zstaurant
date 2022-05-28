@@ -11,7 +11,6 @@ const Featured = () => {
       setIndex(index === 0 ? 2 : index - 1);
     }
     if (direction === "right") {
-      console.log("hey");
       setIndex(index === 2 ? 0 : index + 1);
     }
   };
@@ -24,7 +23,7 @@ const Featured = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.arrowRight} onClick={() => handleSlider("left")}>
-        <Image src="/img/arrowl.png" width="50px" height={50} />
+        <Image src="/img/arrowl.png" alt="" width="50px" height={50} />
       </div>
       <div
         className={styles.sliderContainer}
@@ -33,13 +32,13 @@ const Featured = () => {
         {images.map((image, index) => {
           return (
             <div className={styles.slide} key={index}>
-              <Image src={image} layout="fill" objectFit="contain" />
+              <Image src={image} alt="" layout="fill" objectFit="contain" />
             </div>
           );
         })}
       </div>
       <div className={styles.arrowLeft} onClick={() => handleSlider("right")}>
-        <Image src="/img/arrowr.png" width="50px" height={50} />
+        <Image src="/img/arrowr.png" alt="" width="50px" height={50} />
       </div>
     </div>
   );

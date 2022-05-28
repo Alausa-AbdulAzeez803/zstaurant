@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 import styles from "../../styles/Product.module.css";
@@ -38,7 +38,7 @@ const Product = ({ pizza }) => {
     <div className={styles.container}>
       <div className={styles.left}>
         <div className={styles.imgContainer}>
-          <Image src={pizza.img} layout="fill" objectFit="contain" />
+          <Image src={pizza.img} alt="" layout="fill" objectFit="contain" />
         </div>
       </div>
       <div className={styles.right}>
@@ -50,15 +50,15 @@ const Product = ({ pizza }) => {
         <h3 className={styles.select}>Choose the size</h3>
         <div className={styles.sizeOptions}>
           <div className={styles.sizeOption} onClick={() => setIndex(0)}>
-            <Image src="/img/size.png" height="30px" width="30px" />
+            <Image src="/img/size.png" alt="" height="30px" width="30px" />
             <span className={styles.sizeSpan}>small</span>
           </div>
           <div className={styles.sizeOption} onClick={() => setIndex(1)}>
-            <Image src="/img/size.png" height="40px" width="40px" />
+            <Image src="/img/size.png" alt="" height="40px" width="40px" />
             <span className={styles.sizeSpan}>medium</span>
           </div>
           <div className={styles.sizeOption} onClick={() => setIndex(2)}>
-            <Image src="/img/size.png" height="50px" width="50px" />
+            <Image src="/img/size.png" alt="" height="50px" width="50px" />
             <span className={styles.sizeSpan}>large</span>
           </div>
         </div>

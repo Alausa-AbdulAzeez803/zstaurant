@@ -2,9 +2,10 @@ import React from "react";
 import Image from "next/image";
 
 import styles from "../../styles/Orders.module.css";
+import axios from "axios";
 
-const Orders = () => {
-  const status = 0;
+const Orders = ({ order }) => {
+  const status = order.status;
 
   const statusClass = (index) => {
     if (index - status < 1) return styles.done;
@@ -25,10 +26,10 @@ const Orders = () => {
                 <th>Total</th>
               </tr>
               <tr className={styles.tr}>
-                <td className={styles.trId}>2345678909876</td>
-                <td className={styles.trName}>John Doe</td>
-                <td className={styles.trAddress}>Elton st. 212-33 LA</td>
-                <td className={styles.productTotal}>$39.8</td>
+                <td className={styles.trId}>{order._id}</td>
+                <td className={styles.trName}>{order.customer}</td>
+                <td className={styles.trAddress}>{order.address}</td>
+                <td className={styles.productTotal}>${order.total}</td>
               </tr>
             </tbody>
           </table>
@@ -36,11 +37,12 @@ const Orders = () => {
         <div className={styles.deliveryDetails}>
           <div className={statusClass(0)}>
             <div className={styles.detailDesc}>
-              <Image src="/img/paid.png" width={30} height={30} />
+              <Image src="/img/paid.png" alt="" width={30} height={30} />
               <p className={styles.text}>Payment</p>
             </div>
             <Image
               src="/img/checked.png"
+              alt=""
               width={20}
               height={20}
               className={styles.checked}
@@ -49,10 +51,11 @@ const Orders = () => {
           <div className={statusClass(1)}>
             <div className={styles.detailDesc}>
               <Image src="/img/bake.png" width={30} height={30} />
-              <p className={styles.text}>Payment</p>
+              <p className={styles.text}>Preparing</p>
             </div>
             <Image
               src="/img/checked.png"
+              alt=""
               width={20}
               height={20}
               className={styles.checked}
@@ -60,10 +63,11 @@ const Orders = () => {
           </div>
           <div className={statusClass(2)}>
             <div className={styles.detailDesc}>
-              <Image src="/img/bike.png" width={30} height={30} />
-              <p className={styles.text}>Payment</p>
+              <Image src="/img/bike.png" alt="" width={30} height={30} />
+              <p className={styles.text}>On the way</p>
             </div>
             <Image
+              alt=""
               src="/img/checked.png"
               width={20}
               height={20}
@@ -72,11 +76,12 @@ const Orders = () => {
           </div>
           <div className={statusClass(3)}>
             <div className={styles.detailDesc}>
-              <Image src="/img/delivered.png" width={30} height={30} />
-              <p className={styles.text}>Payment</p>
+              <Image src="/img/delivered.png" alt="" width={30} height={30} />
+              <p className={styles.text}>Delivered</p>
             </div>
             <Image
               src="/img/checked.png"
+              alt=""
               width={20}
               height={20}
               className={styles.checked}
@@ -89,13 +94,13 @@ const Orders = () => {
           <h3 className={styles.cardTitle}>CART TOTAL</h3>
           <div className={styles.cardDetails}>
             <div className={styles.cardDetail}>
-              Subtotal: <span>$79.00</span>
+              Subtotal: <span>${order.total}</span>
             </div>
             <div className={styles.cardDetail}>
               Discount: <span>$00.00</span>
             </div>
             <div className={styles.cardDetail}>
-              Total: <span>$79.00</span>
+              Total: <span>${order.total}</span>
             </div>
           </div>
           <button className={styles.cartBtn}>PAID</button>
@@ -103,6 +108,13 @@ const Orders = () => {
       </div>
     </div>
   );
+};
+
+export const getServerSideProps = async ({ params }) => {
+  const res = await axios.get(`http://localhost:3000/api/orders/${params.id}`);
+  return {
+    props: { order: res.data },
+  };
 };
 
 export default Orders;

@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import Featured from "../components/Featured";
 import Products from "../components/Products";
 import styles from "../styles/Home.module.css";

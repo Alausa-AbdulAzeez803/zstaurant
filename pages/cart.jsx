@@ -119,6 +119,7 @@ const Cart = () => {
                   <td>
                     <Image
                       src={cartItem.img}
+                      alt=""
                       width="90px"
                       height="90px"
                       objectFit="contain"

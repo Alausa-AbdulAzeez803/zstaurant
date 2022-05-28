@@ -12,7 +12,7 @@ const Navbar = () => {
     <div className={styles.container}>
       <div className={styles.left}>
         <div className={styles.callBtn}>
-          <Image src="/img/telephone.png" width="35px" height="35px" />
+          <Image src="/img/telephone.png" alt="" width="35px" height="35px" />
         </div>
         <div className={styles.texts}>
           <div className={styles.text}>ORDER NOW</div>
@@ -34,6 +34,7 @@ const Navbar = () => {
           <li className={styles.listItem}>Menu</li>
           <Image
             src="/img/logo.png"
+            alt=""
             width="100px"
             height="70px"
             className={styles.listItem}
@@ -47,7 +48,7 @@ const Navbar = () => {
         <div className={styles.cart}>
           <Link href={`/cart`} passHref>
             <div className="" style={{ cursor: "pointer" }}>
-              <Image src="/img/cart.png" width="25px" height="25px" />
+              <Image src="/img/cart.png" alt="" width="25px" height="25px" />
             </div>
           </Link>
           <div className={styles.cartModal}>{cart.cartLength}</div>
