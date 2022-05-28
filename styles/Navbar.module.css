@@ -77,17 +77,14 @@
   .container {
     padding: 0px 30px;
   }
+  .center ul {
+    display: none;
+  }
   .center {
-    display: none;
-  }
-  .center ul li {
-    display: none;
-  }
-  .center ul li:first-child {
-    display: flex;
+    flex: none;
   }
 
-  .list .left {
+  .left {
     flex: 3;
   }
   .right {
