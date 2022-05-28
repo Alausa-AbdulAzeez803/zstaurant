@@ -97,7 +97,9 @@ const Product = ({ pizza }) => {
 };
 
 export async function getServerSideProps({ params }) {
-  const res = await axios.get(`/api/products/${params.id}`);
+  const res = await axios.get(
+    `https://zstaurant.herokuapp.com/api/products/${params.id}`
+  );
 
   return {
     props: {

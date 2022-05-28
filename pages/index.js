@@ -19,7 +19,7 @@ export default function Home({ products }) {
 }
 
 export async function getServerSideProps() {
-  const res = await axios.get(`/api/products`);
+  const res = await axios.get(`https://zstaurant.herokuapp.com/api/products`);
 
   return {
     props: {
