@@ -112,7 +112,7 @@ const Orders = ({ order }) => {
 
 export const getServerSideProps = async ({ params }) => {
   const res = await axios.get(
-    `https://zstaurant.herokuapp.com/api/orders/${params.id}`
+    `https://639c15722d226b6597d64e99--glittering-crostata-f82eb6.netlify.app/api/orders/${params.id}`
   );
   return {
     props: { order: res.data },
